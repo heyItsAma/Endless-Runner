@@ -70,10 +70,13 @@ url(SpriteSheets/spriteSheetForward.png);
 			}
 			});
 		
-		updateScreen();
+		function updateScreen(){
+        $screen.css({'width':window.innerWidth, 'height':       window.innerHeight});
+        }
+        
 		function init(){
-		 $body.append("<div class=mark></div>");
-		 $(".spriteSheetForward").animateSprite({
+		 $body.append("<div class=bat></div>");
+		 $(".bat").animateSprite({
 		 fps: 5,
 		 animations: {
 		 walkRight: [0,1,2,3,4,5],
@@ -82,7 +85,7 @@ url(SpriteSheets/spriteSheetForward.png);
 		 loop: true
 		 });
 		 
-		 $(".spriteSheetForward").animateSprite('play', 'walkRight');
+		 $(".bat").animateSprite('play', 'walkRight');
 		 
 		 $('.terrain img').clone().appendTo(".terrain");
 		 
