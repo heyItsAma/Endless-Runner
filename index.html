@@ -9,8 +9,7 @@
 <meta name = "apple-mobile-web-app-status-bar-style" content = "black-translucent" />
 
 <style type = "text/css">
-/*css styles go here*/
-body { margin: 0; padding: 0; background: #000;}
+body { margin: 0; padding: 0; background: #d3e4ff;}
 container { display: block; margin: 0 auto; padding: 0; background: #a9daf8;}
 
 .terrain{
@@ -24,11 +23,11 @@ container { display: block; margin: 0 auto; padding: 0; background: #a9daf8;}
     margin: 0 -.125em;
 	padding: 0;
 }
-.mark {
+.bat {
     height: 70px;
 	width: 24px;
 	background-image: 
-url(spriteSheetForward.png);
+url(SpriteSheets/spriteSheetForward.png);
     z-index: 100;
 	position: absolute;
 	top: 360px;
@@ -40,9 +39,9 @@ url(spriteSheetForward.png);
 
 <body>
     <container>
-	/*html markup goes here*/
+	<!--html markup goes here-->
 	  <div class = "terrain">
-	    <img src = "runner_terrain.png" alt="" width="2400" height="305"/>
+	    <img src = "Terrain/runner_terrain.png" alt="" width="2400" height="305"/>
 	  </div>
 	</container>
 	
@@ -74,15 +73,16 @@ url(spriteSheetForward.png);
 		updateScreen();
 		function init(){
 		 $body.append("<div class=mark></div>");
-		 $(".mark").animateSprite({
+		 $(".spriteSheetForward").animateSprite({
 		 fps: 5,
 		 animations: {
-		 walkRight: [0,1,2,3,4,5]
+		 walkRight: [0,1,2,3,4,5],
+         walkLeft: [0,1,2,3,4,5]
 		 },
 		 loop: true
 		 });
 		 
-		 $(".mark").animateSprite('play', 'walkRight');
+		 $(".spriteSheetForward").animateSprite('play', 'walkRight');
 		 
 		 $('.terrain img').clone().appendTo(".terrain");
 		 
